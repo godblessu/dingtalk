@@ -1,0 +1,22 @@
+{
+	"name" : "spruce/dingtalk",
+	"description" : "钉钉机器人自定义消息\u001B",
+	"authors" : [{
+			"name" : "hand",
+			"email" : "handong02@meicai.cn"
+		}
+	],
+	"require" : {
+		"php" : ">=7.1"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"spruce\\dingtalk\\" : "src"
+		}
+	},
+	"archive" : {
+		"exclude" : [
+			"/tests/*"
+		]
+	}
+}
