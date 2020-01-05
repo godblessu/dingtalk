@@ -11,6 +11,15 @@ namespace spruce\dingtalk;
 
 class Client
 {
+    private $_access_token = '';
+    
+    private $_sign = '';
+    
+    public function __construct($token,$sign){
+        $this->_access_token = $token;
+        $this->_sign = $sign;
+    }
+    
     public function request_by_curl($remote_server, $post_string) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
@@ -30,7 +39,7 @@ class Client
         list($s1, $s2) = explode(' ', microtime());
         $timestamp = (float)sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
         
-        $secret = 'xxxxx';
+        $secret = $this->_sign;
         
         $data = $timestamp . "\n" . $secret;
         
@@ -38,7 +47,7 @@ class Client
         
         $signStr = utf8_encode(urlencode($signStr));
         
-        $webhook = "https://oapi.dingtalk.com/robot/send?access_token=68852f508611817158545d6f38751feda20dd1232403e77849baa0b45600e8c6";
+        $webhook = "https://oapi.dingtalk.com/robot/send?access_token=".$this->_access_token;
         
         $webhook .= "&timestamp=$timestamp&sign=$signStr";
         
