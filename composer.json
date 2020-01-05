@@ -7,7 +7,8 @@
 		}
 	],
 	"require" : {
-		"php" : ">=7.1"
+		"php" : ">=7.1",
+		"meixian/foundation" : "*"
 	},
 	"autoload" : {
 		"psr-4" : {
@@ -18,5 +19,6 @@
 		"exclude" : [
 			"/tests/*"
 		]
-	}
+	},
+	"version": "1.0.0"
 }
