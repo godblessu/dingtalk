@@ -57,7 +57,7 @@ class Client
         $data = array ('msgtype' => 'text','text' => array ('content' => $message));
         $data_string = json_encode($data);
         
-        $result = request_by_curl($webhook, $data_string);
+        $result = $this->request_by_curl($webhook, $data_string);
         return $result;
     }
 }
