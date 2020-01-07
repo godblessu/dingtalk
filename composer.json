@@ -1,6 +1,19 @@
 {
 	"name" : "spruce/dingtalk",
 	"description" : "钉钉机器人自定义消息\u001B",
+	"repositories" : [
+		{
+			"type" : "composer",
+			"url" : "https://packagist.sprucetec.com/repo/private/"
+		}, 
+		{
+			"type" : "composer",
+			"url" : "https://packagist.sprucetec.com/repo/packagist/"
+		},
+		{
+      		"packagist": false
+    	}
+	],
 	"authors" : [{
 			"name" : "hand",
 			"email" : "handong02@meicai.cn"
@@ -20,5 +33,6 @@
 			"/tests/*"
 		]
 	},
-	"minimum-stability": "dev"
+	"minimum-stability" : "dev",
+	"license": "MIT"
 }
