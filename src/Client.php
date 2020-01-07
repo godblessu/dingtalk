@@ -1,7 +1,7 @@
 <?php
 /**
  * client.php
- * 
+ * 钉钉加签方式发送验证码
  * @Copyright(c) 2020 meicai
  * @author hand
  * @date: 2020年1月3日 上午11:45:54
@@ -35,7 +35,10 @@ class Client
         return $data;
     }  
     
-    public function push(){
+    public function push($message){
+        if(empty($message)){
+            return false;
+        }
         list($s1, $s2) = explode(' ', microtime());
         $timestamp = (float)sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
         
@@ -51,7 +54,6 @@ class Client
         
         $webhook .= "&timestamp=$timestamp&sign=$signStr";
         
-        $message="我就是我, 是不一样的烟火";
         $data = array ('msgtype' => 'text','text' => array ('content' => $message));
         $data_string = json_encode($data);
         
