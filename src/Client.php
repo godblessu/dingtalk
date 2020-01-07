@@ -58,5 +58,6 @@ class Client
         $data_string = json_encode($data);
         
         $result = request_by_curl($webhook, $data_string);
+        return $result;
     }
 }
