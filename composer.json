@@ -1,6 +1,6 @@
 {
 	"name" : "spruce/dingtalk",
-	"description" : "钉钉机器人自定义消息\u001B",
+	"description" : "钉钉机器人自定义消息 sign加签方式",
 	"repositories" : [
 		{
 			"type" : "composer",
